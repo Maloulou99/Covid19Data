@@ -4,17 +4,14 @@ import java.util.*;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         ArrayList<CovidData> allData = new ArrayList<>();
 
         File f = new File("Java noegletal_pr_region_pr_aldersgruppe.csv");
 
-        try
-        {
+        try {
             Scanner sc = new Scanner(f, StandardCharsets.ISO_8859_1);
-            while (sc.hasNext())
-            {
+            while (sc.hasNext()) {
                 String line = sc.nextLine();
                 String[] attributes = line.split(";");
 
@@ -29,15 +26,12 @@ public class Main
 
                 allData.add(readData);
             }
-            for (CovidData cd : allData)
-            {
+            for (CovidData cd : allData) {
                 System.out.println(cd);
             }
-        }
-
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Fejl i indlæsning: " + e.getMessage());
         }
+
     }
 }

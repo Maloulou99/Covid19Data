@@ -47,7 +47,7 @@ public class CovidData
         return date;
     }
 
-    @Override
+    /*@Override
     public String toString()
     {
         return
@@ -58,5 +58,11 @@ public class CovidData
                         "Intensive-Hospitalized: " + intensiveHospitalized + "  " +
                         "Hospitalized: " + hospitalized + "  " +
                         "Date: " + date;
+    }*/
+    @Override
+    public String toString() {
+        return String.format("""
+                        Region: %-15s Aldersgruppe: %-8s Bekræftet tilfælde: %-6d Døde: %-6d Indlagte intensiv: %-5d Indlagte: %-8s Dato: %-6s""",
+                region, age, confirmed, dead, intensiveHospitalized, hospitalized, date);
     }
 }
